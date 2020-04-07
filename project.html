@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset = "utf-8">
+<title>Code-O-Wasp</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+  width: 200%;
+  background-opacity: 0.7;
+}
+
+button {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50px;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family:"Lucida Console", Courier, monospace;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.flex-container {
+  display: flex;
+  
+}
+
+.flex-container > div {
+  background-image: (to right, rgba(0,0,0,0), rgba(0,0,0,1));
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.headline {
+    font-size:30px;
+    font-family: "Lucida Console", Courier, monospace;
+    color:white;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 0 0 -10px 0;
+}
+
+header {
+    width: 100%;
+    display: inline;
+    line-height: 0px;
+}
+
+#typing , .typing {
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 13px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+  }
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  width: 300px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+  border-radius: 40px;
+}
+
+input[type=text]:focus {
+  width: 400px;
+  border:none;
+}
+
+hr {
+    border: white;
+}
+
+h1, h2 {
+  text-align: center;
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+h1{
+  font-size: 25px;
+}
+
+.code-checker {
+  line-height: 0px;
+}
+
+.typing {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  background: none;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+}
+
+.wrapper-button {
+  text-align: center;
+}
+
+.icon {
+  padding: 10px;
+  
+  color: white;
+  min-width: 20px;
+  text-align: center;
+}
+
+.perks-q {
+  float: right;
+  padding-right: -10px;
+}
+
+.countdowntimer-headline {
+  font-size: 20px;
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+
+}
+
+#okd, #okm, #okh, #oks {
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 40px;
+}
+
+.login {
+  text-align: center;
+}
+
+.coverup {
+  text-align: center;
+}
+
+#div1 {
+  color: white;
+}
+
+.handsdown {
+  text-align: center;
+}
+
+.sub-container-1, .sub-container-2 {
+  text-align: center;
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.sub-container-1, .under-container-1 {
+  font-size: 30px;
+}
+
+.flex-container-2 {
+  background-image: linear-gradient(to right, rgba(76,175,80,0), rgba(76,175,80,1));
+}
+
+.under-container-1, .under-container-2 {
+  text-align: center;
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.whatsapp {
+  background-color: #4FCE5D;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #00acee;
+}
+
+.whatsapp, .facebook, .twitter {
+  text-decoration: none;
+  font-family: "Lucida Console", Courier, monospace;
+  color: white;
+  margin: 5px;
+  padding: 16px 32px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 10px;
+}
+
+.ending, .ending-2 {
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.ending {
+  font-size: 15px;
+}
+
+.ending-2 {
+  font-size: 12px;
+}
+
+.break hr {
+  border: 0.5px solid white;
+}
+
+</style>
+</head>
+
+<body onload = "typeWriter()">
+
+
+<div class="flex-container">
+  
+  <div>
+  <header>
+   <p class = "headline"> &lt/Code-O-Wasp&gt</p>
+   <p id="typing"></p>
+   <hr>
+   <div class = "typing">Caution: It's not a normal site. You can either scroll vertically or horizontally</div>
+  </header>
+  </div>
+ 
+   <div>
+   <div class = "button-line">
+   <button type="button"><i class="fa fa-code" aria-hidden="true"></i> Online Practice</button>
+   <button type="button"><i class="fa fa-user-o" aria-hidden="true"></i> Mentor's Advice</button>
+   <button type="button"><i class="fa fa-laptop" aria-hidden="true"></i> Competitive Coding</button>
+   <button type="button"><i class="fa fa-star-o" aria-hidden="true"></i> Free Certifications</button>
+   <button type="button"><i class="fa fa-map-o" aria-hidden="true"></i> Read Interviews</button>
+   </div>
+   <hr><hr><hr>
+   <div class = "code-checker">
+   <h2> Want to check your code for syntax errors?</h2>
+   <h1> Do it online for free! </h1>
+   <hr><hr>
+   <div class= "wrapper-button"><button type="button">Get Set CODE!</button></div>
+   </div>
+   </div>
+
+  <div id = "form">
+  <div class="container">
+    <label for="uname">
+    <i class="fa fa-user icon"></i>
+    <input type="text" placeholder="Username" name="uname" required></label><br>
+
+    <label for="psw">
+    <i class="fa fa-key icon"></i>
+    <input type="text" placeholder="Password" name="psw" required></label><br>
+     <div class = "login">
+    <button type="submit">Login</button></div>
+  </div>
+  </div>
+
+<div class = "countdowntimer">
+<div class = "countdowntimer-headline">
+Next online coding event will start in:</div><br>
+<div class = "handsdown"></i>
+<div id="div1" class="fa"></div></div><br>
+<div class = "coverup">
+<div id="okd"></div><br>
+<div id="okh"></div><br>
+<div id="okm"></div><br>
+<div id="oks"></div></div>
+</div>
+
+</div>
+<div class = "flex-container-2">
+<div class = "sub-container-1">
+What is &lt/Code-O-Wasp&gt all about?</div><br>
+<div class = "sub-container-2">
+<i class="fa fa-check-square-o" aria-hidden="true"></i>Get free certifications with online practice.<br><br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i>Learn any language along with practice and real-time projects.<br><br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i>Get notified about various coding events.<br><br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i>Get advises from the best mentors working at your dream companies.<br><br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i>Choose the best site for any reference material.<br><br>
+<i class="fa fa-check-square-o" aria-hidden="true"></i>Get the best path devised by many pro-coders out there!<br><br>
+</div>
+</div>
+</div>
+<br><br>
+<div class = "flex-container-3">
+<div class = "under-container-1">
+Hey, You can connect with us on other social media sites too: </div><br><br>
+<div class = "under-container-2">
+<a href = "#" class = "whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> Join our WhatsApp Group</a>
+<a href = "#" class = "facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Like Our Facebook Page</a>
+<a href = "#" class = "twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Follow our Twitter Page</a>
+</div>
+</div>
+<br><br>
+<div class= "break">
+<hr></div>
+<footer>
+<div class = "ending">
+&lt/Code-O-Wasp&gt
+</div>
+<p class = "ending-2">All rights reserved</p>
+</footer>
+
+<script>
+var i = 0;
+var txt = 'Hey there coder!';
+var speed = 80;
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("typing").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+var countdowndate = new Date("April 15, 2021 23:59:59").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countdowndate - now;
+
+            var days = Math.floor(distance/(1000 * 60 * 60 * 24));
+            var hours = Math.floor(distance % (1000 * 60 * 60 * 24)/(1000 * 60 * 60));
+            var minutes = Math.floor(distance % (1000 * 60 * 60)/(1000 * 60));
+            var seconds = Math.floor(distance % (1000 * 60)/(1000));
+
+            document.getElementById("okd").innerHTML = days + "D";
+            document.getElementById("okh").innerHTML = hours + "H";
+            document.getElementById("okm").innerHTML = minutes + "M";
+            document.getElementById("oks").innerHTML = seconds + "S";
+            
+            if(distance < 0) {
+                clearInterval(x);
+                document.getElementById("ok").innerHTML = "Date reached!";
+            }
+        }, 1000)
+
+
+  function hourglass() {
+  var a;
+  a = document.getElementById("div1");
+  a.innerHTML = "&#xf251;";
+  setTimeout(function () {
+      a.innerHTML = "&#xf252;";
+    }, 1000);
+  setTimeout(function () {
+      a.innerHTML = "&#xf253;";
+    }, 2000);
+}
+hourglass();
+setInterval(hourglass, 3000);
+
+</script>
+</body>
+
+</html>
